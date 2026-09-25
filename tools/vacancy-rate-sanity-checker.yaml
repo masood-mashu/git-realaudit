@@ -1,0 +1,18 @@
+name: vacancy-rate-sanity-checker
+description: "Verifies that property pro forma assumes at least a 5% physical and economic vacancy allowance"
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    assumed_vacancy_pct:
+      type: string
+      description: "Modeled property vacancy rate percentage"
+  required:
+    - assumed_vacancy_pct
+implementation:
+  type: script
+  path: vacancy_rate_sanity_checker.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true

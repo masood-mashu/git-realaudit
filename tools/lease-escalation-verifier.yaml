@@ -1,0 +1,18 @@
+name: lease-escalation-verifier
+description: "Calculates compounded future annual lease payment based on annual percentage increase"
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    base_annual_rent:
+      type: string
+      description: "Base year annual rent in dollars"
+  required:
+    - base_annual_rent
+implementation:
+  type: script
+  path: lease_escalation_verifier.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true

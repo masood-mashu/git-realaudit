@@ -1,0 +1,18 @@
+name: cap-rate-calculator
+description: "Calculates Capitalization Rate where Cap Rate is Net Operating Income divided by Purchase Price times 100"
+version: 1.0.0
+input_schema:
+  type: object
+  properties:
+    noi_dollars:
+      type: string
+      description: "Net Operating Income in annual dollars"
+  required:
+    - noi_dollars
+implementation:
+  type: script
+  path: cap_rate_calculator.py
+  runtime: python3
+annotations:
+  read_only: true
+  idempotent: true

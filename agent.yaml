@@ -1,0 +1,40 @@
+spec_version: "0.1.0"
+name: git-realaudit
+version: 1.0.0
+description: "Autonomous Commercial Real Estate Cap Rate, Lease Escalation & Net Operating Income (NOI) Agent"
+author: "masood-mashu"
+license: "Apache-2.0"
+
+model:
+  preferred: "openai:gpt-4o"
+  fallback:
+    - "anthropic:claude-3-5-sonnet"
+    - "openai:gpt-4o-mini"
+  constraints:
+    temperature: 0.1
+    max_tokens: 4096
+
+skills:
+  - cre-underwriting-workflow
+  - rent-roll-audit-methodology
+
+tools:
+  - cap-rate-calculator
+  - dscr-covenant-auditor
+  - lease-escalation-verifier
+  - vacancy-rate-sanity-checker
+
+runtime:
+  max_turns: 50
+  timeout: 120
+
+tags:
+  - real-estate
+  - property
+  - cap-rate
+  - noi
+  - passport-challenge
+
+metadata:
+  passport_id: "aps-realaudit-01"
+  passport_category: "Real estate"
